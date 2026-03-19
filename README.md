@@ -8,7 +8,7 @@ To solve the problem efficiently, I decided to split the system into 3 decoupled
 - **Test Orchestrator:** Any external script (in PowerShell) that triggers the REST API.
 
 Sequence Diagram of how the components interact:
-![Sequence Diagram](Sequence_Diagram.drawio.png)
+![Sequence Diagram](Sequence_Diagram.drawio (1).png)
 
 **Why did I choose this?**
 Because this fully decouples the testing logic from the heavy video player UI. Your test scripts don't need to try and "click buttons" on a UI using Selenium (which is notoriously flaky for heavy video streaming and testing). Instead, they just send a tiny HTTP request (`POST /play`), the internal state updates, and the React app seamlessly auto-plays the video on screen. 
